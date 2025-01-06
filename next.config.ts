@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization
   },
-  assetPrefix: isProd ? '/your-repository-name/' : '',
-  basePath: isProd ? '/your-repository-name' : '',
+  assetPrefix: isProd ? '/gsha22.github.io/' : '',
+  basePath: isProd ? '/gsha22.github.io' : '',
   output: 'export'
 };
 
