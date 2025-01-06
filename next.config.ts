@@ -1,4 +1,4 @@
-// import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   reactStrictMode: true,
@@ -8,6 +8,11 @@ const nextConfig = {
   assetPrefix: isProd ? '/gsha22.github.io/' : '',
   basePath: isProd ? '/gsha22.github.io' : '',
   output: 'export'
+};
+
+module.exports = {
+  basePath: '/gsha22.github.io',
+  assetPrefix: '/gsha22.github.io',
 };
 
 export default nextConfig;
