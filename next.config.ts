@@ -10,9 +10,4 @@ const nextConfig = {
   output: 'export'
 };
 
-module.exports = {
-  basePath: '/gsha22.github.io',
-  assetPrefix: '/gsha22.github.io',
-};
-
 export default nextConfig;
