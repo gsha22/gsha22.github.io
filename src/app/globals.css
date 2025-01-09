@@ -4,3 +4,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply relative font-semibold text-black cursor-pointer text-[17px] w-fit block
+    after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full
+    after:scale-x-0 after:transition after:duration-300 after:origin-center;
+
+    /* Transition for scaling text */
+    @apply transition-transform duration-300;
+
+    &:hover {
+      @apply scale-105; /* Slightly increases text size */
+    }
+
+    &:hover:after {
+      @apply scale-x-100; /* Underline animation on hover */
+    }
+  }
+}
