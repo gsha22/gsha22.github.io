@@ -32,8 +32,8 @@ const HomePage = () => {
           <div className="flex flex-col items-center justify-center w-full space-y-8">
             <div className="flex flex-col items-center lg:items-start space-y-8">
               <h1 className="text-[40px] text-white font-sans font-bold text-center lg:text-left">
-                hi! i'm gabriel.
-                <br />
+                hi! i&apos;m gabriel.
+                <br/>
                 <TypingEffect />
               </h1>
               
