@@ -13,7 +13,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4140);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [images]);

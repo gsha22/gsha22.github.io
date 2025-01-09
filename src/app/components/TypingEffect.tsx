@@ -6,15 +6,15 @@ const TypingEffect = () => {
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'student',
-        3000,
+        3300,
         'programmer',
         3000,
         'teaching assistant',
-        3000,
+        2200,
         'volleyball player',
-        3000,
+        2300,
         'climber',
-        3000
+        3300
       ]}
       wrapper="span"
       speed={50}
