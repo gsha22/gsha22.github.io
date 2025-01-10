@@ -1,23 +1,26 @@
 'use client'
 // import Navbar from "./components/Navbar";
-import HomePage from "./components/HomePage";
+import HomePage from "./pages/HomePage";
+// import AboutPage from "./pages/AboutPage";
 
 const HomeSection = () => {
   return (
     <>
-      <div className="relative flex flex-col w-full min-h-screen">
+      <div className="flex flex-col">
         {/* Navbar */}
         {/* <div className="relative z-50">
           <Navbar />
         </div> */}
 
         {/* HomePageText */}
-        <div className="relative z-10">
+        <div className="relative z-0">
           <HomePage />
         </div>
+        {/* <div className="z-10">
+          <AboutPage />
+        </div> */}
       </div>
     </>
-    
   );
 };
 

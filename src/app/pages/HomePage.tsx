@@ -1,7 +1,7 @@
 import React from "react";
-import Particles from "./Particles";
-import TypingEffect from "./TypingEffect";
-import Slideshow from "./Slideshow";
+import Particles from "../components/Particles";
+import TypingEffect from "../components/TypingEffect";
+import Slideshow from "../components/Slideshow";
 import Image from "next/image";
 import { SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -43,7 +43,7 @@ const HomePage = () => {
                   href="/Gabriel_Sha_resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 bg-[#4285F4] hover:bg-[#4285F4]/90 text-white px-5 py-2.5 rounded-lg transition-colors duration-300"
+                  className="flex items-center space-x-2 bg-white/10 hover:bg-[#eebc1d]/90 text-white px-5 py-2.5 rounded-full transition-colors duration-300"
                 >
                   <Image
                     src="/download.svg"
@@ -93,9 +93,9 @@ const HomePage = () => {
       </div>
 
       {/* Scroll Arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <IoIosArrowDown className="text-2xl" />
-      </div>
+      </div> */}
     </div>
   );
 };
