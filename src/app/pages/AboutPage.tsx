@@ -131,7 +131,7 @@ I'm always open to chat, so if we have anything in common and/or there is anythi
 										<Typography component="h3" className="text-md md:text-md font-bold leading-tight">
 											{item.school}
 										</Typography>
-										<Typography className="text-sm md:text-base text-charcoal-700 dark:text-offwhite/80" sx={{ marginBottom: 1 }}>
+										<Typography className="text-md md:text-base text-charcoal-700 dark:text-offwhite/80" sx={{ marginBottom: 1 }}>
 											{item.college}
 										</Typography>
 										<Typography className="text-xs md:text-sm text-charcoal-600 dark:text-offwhite/70" sx={{ marginY: 1 }}>
