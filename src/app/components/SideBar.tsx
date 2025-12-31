@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   User,
   Settings,
@@ -25,25 +25,7 @@ const contactLink = { href: "/contact", label: "contact", icon: Send };
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const ContactIcon = contactLink.icon;
-
-  useEffect(() => {
-    // Track OS-level color scheme so we can swap icons accordingly.
-    if (typeof window === "undefined" || !window.matchMedia) return;
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const updateScheme = (event: MediaQueryListEvent | MediaQueryList) => {
-      setIsDarkMode(event.matches);
-    };
-
-    updateScheme(mediaQuery);
-    mediaQuery.addEventListener("change", updateScheme);
-
-    return () => {
-      mediaQuery.removeEventListener("change", updateScheme);
-    };
-  }, []);
 
   return (
     <>
@@ -54,12 +36,20 @@ export default function Sidebar() {
             href="/"
             className="pl-2 pb-4 flex items-center rounded-lg transition-all duration-200 hover:scale-105"
           >
+            {/* Swap icons purely via Tailwind dark variant to avoid flicker and JS state */}
             <Image
-              src={isDarkMode ? "/images/dark_icon.png" : "/images/light_icon.png"}
+              src="/images/light_icon.png"
               width={80}
               height={80}
               alt="hongjie icon"
-              className="rounded-lg"
+              className="rounded-lg block dark:hidden"
+            />
+            <Image
+              src="/images/dark_icon.png"
+              width={80}
+              height={80}
+              alt="hongjie icon"
+              className="rounded-lg hidden dark:block"
             />
           </Link>
           <button
@@ -88,7 +78,7 @@ export default function Sidebar() {
         <div
           className="border-t border-charcoal-100 dark:border-charcoal-700 bg-warm dark:bg-charcoal-800 shadow-md overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
           style={{
-            maxHeight: isOpen ? "420px" : "0px",
+            maxHeight: isOpen ? "500px" : "0px",
             opacity: isOpen ? 1 : 0,
             transform: isOpen ? "translateY(0)" : "translateY(-8px)",
             pointerEvents: isOpen ? "auto" : "none",
@@ -113,7 +103,7 @@ export default function Sidebar() {
               <ContactIcon size={18} className="transition-colors group-hover:text-accent-600" /> {contactLink.label}
             </Link>
           </nav>
-          <div className="px-6 py-3">
+          <div className="px-6 py-3 pb-8">
             <p className="text-xs text-charcoal-600 dark:text-offwhite/80 flex items-center justify-center gap-1 font-sans font-medium text-center">
               <Copyright size={10} /> 2025 with ❤️ by Gabriel
             </p>
@@ -127,12 +117,20 @@ export default function Sidebar() {
           href="/"
           className="flex pl-4 pb-4 items-center mb-2 rounded-lg transition-all duration-200 hover:scale-105 cursor-pointer"
         >
+          {/* Desktop icon swap via Tailwind dark variant */}
           <Image
-            src={isDarkMode ? "/images/dark_icon.png" : "/images/light_icon.png"}
+            src="/images/light_icon.png"
             width={100}
             height={100}
             alt="hongjie icon"
-            className="rounded-xl"
+            className="rounded-xl block dark:hidden"
+          />
+          <Image
+            src="/images/dark_icon.png"
+            width={100}
+            height={100}
+            alt="hongjie icon"
+            className="rounded-xl hidden dark:block"
           />
         </Link>
         <nav className="flex flex-col gap-4 mt-2 w-10/12">
