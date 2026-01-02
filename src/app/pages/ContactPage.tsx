@@ -10,7 +10,7 @@ const socials = [
 
 export default function ContactPage() {
 	return (
-		<div className="flex min-h-screen bg-warm dark:bg-charcoal-900">
+		<div className="flex min-h-screen bg-warm dark:bg-charcoal-800">
 			<SideBar />
 			<main className="flex-1 md:ml-80 px-6 md:px-12 pt-28 md:pt-16 pb-16">
 				<h1 className="text-4xl font-bold text-charcoal dark:text-offwhite font-sans">contact</h1>
@@ -26,7 +26,7 @@ export default function ContactPage() {
 								href={href}
 								target="_blank"
 								rel="noreferrer noopener"
-								className="group flex items-center rounded-lg border border-charcoal-100 bg-offwhite px-3 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-200 hover:shadow-sm dark:border-charcoal-700 dark:bg-charcoal-800"
+								className="group flex items-center rounded-lg border border-charcoal-100 bg-offwhite px-3 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-200 hover:shadow-sm dark:border-charcoal-600 dark:bg-charcoal-700"
 							>
 								<span className="flex h-9 w-9 items-center justify-center rounded-md bg-warm-200 text-charcoal transition-colors group-hover:bg-accent-50 group-hover:text-accent-700 dark:bg-charcoal-700 dark:text-offwhite dark:group-hover:bg-charcoal-600">
 									<Icon className="h-4 w-4" aria-hidden />

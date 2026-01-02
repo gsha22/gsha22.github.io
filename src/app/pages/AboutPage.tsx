@@ -58,14 +58,14 @@ export default function AboutPage() {
 		{
 			school: "Carnegie Mellon University",
 			college: "Dietrich College of Humanities and Social Sciences",
-			dates: "Aug 2022 - Current",
+			dates: "Aug '22 - Current",
 			program: "B.S. Information Systems + Computer Science",
 			gpa: "",
 		},
 		{
 			school: "Gateway High School",
 			college: "Dietrich College of Humanities and Social Sciences",
-			dates: "Aug 2018 - May 2022",
+			dates: "Aug '18 - May '22",
 			program: "",
 			gpa: "4.00 / 4.00 | 4/254",
 		},
