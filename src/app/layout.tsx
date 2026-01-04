@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import ThemeRegistry from "./ThemeRegistry";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -35,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-warm text-charcoal dark:bg-charcoal-800 dark:text-offwhite`}
       >
-        {children}
+        <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>
   );

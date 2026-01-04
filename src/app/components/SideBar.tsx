@@ -105,14 +105,14 @@ export default function Sidebar() {
           </nav>
           <div className="px-6 py-3 pb-8">
             <p className="text-xs text-charcoal-600 dark:text-offwhite/80 flex items-center justify-center gap-1 font-sans font-medium text-center">
-              <Copyright size={10} /> 2025 with ❤️ by Gabriel
+              <Copyright size={10} /> 2026 with ❤️ by Gabriel
             </p>
           </div>
         </div>
       </header>
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex pl-16 pt-16 pb-10 flex-col fixed h-full bg-warm dark:bg-charcoal-800 w-80 items-start shadow-sm">
+      <aside className="hidden md:flex pl-8 pt-16 pb-10 flex-col fixed h-full bg-warm dark:bg-charcoal-900 w-60 items-start shadow-sm">
         <Link
           href="/"
           className="flex pl-4 pb-4 items-center mb-2 rounded-lg transition-all duration-200 hover:scale-105 cursor-pointer"
@@ -138,7 +138,7 @@ export default function Sidebar() {
             <Link
               key={href}
               href={href}
-              className="group flex items-center gap-2 px-4 py-1 rounded-lg transition-all duration-200 hover:bg-warm-200 dark:hover:bg-charcoal-700 hover:scale-105 font-sans text-lg font-medium text-charcoal dark:text-offwhite"
+              className="group flex items-center gap-2 px-4 py-1 rounded-lg transition-all duration-200 hover:bg-warm-200 dark:hover:bg-charcoal-700 hover:scale-105 font-sans text-lg font-medium text-black dark:text-offwhite"
             >
               <Icon className="transition-colors group-hover:text-accent-600" /> {label}
             </Link>
@@ -147,14 +147,14 @@ export default function Sidebar() {
         <div className="flex flex-col justify-end h-screen w-full">
           <Link
             href={contactLink.href}
-            className="group flex items-center gap-2 px-4 py-1 rounded-lg transition-all duration-200 hover:bg-warm-200 dark:hover:bg-charcoal-700 hover:scale-105 font-sans text-lg font-medium text-charcoal dark:text-offwhite mb-6 w-10/12"
+            className="group flex items-center gap-2 px-4 py-1 rounded-lg transition-all duration-200 hover:bg-warm-200 dark:hover:bg-charcoal-700 hover:scale-105 font-sans text-lg font-medium text-black dark:text-offwhite mb-6 w-10/12"
           >
             <ContactIcon className="transition-colors group-hover:text-accent-600" /> {contactLink.label}
           </Link>
         </div>
         <div className="mt-auto pt-8 w-fit border-t border-charcoal-100 dark:border-charcoal-700">
           <p className="text-xs text-charcoal-600 dark:text-offwhite/80 font-sans font-medium flex items-center gap-1 px-4">
-            <Copyright size={10} /> 2025 with ❤️ by Gabriel
+            <Copyright size={10} /> 2026 with ❤️ by Gabriel
           </p>
         </div>
       </aside>

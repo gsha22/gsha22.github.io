@@ -1,7 +1,10 @@
-"use client";
+'use client';
 
-import { useState } from "react";
 import SideBar from "@/app/components/SideBar";
+import ContentContainer from "@/app/components/ContentContainer";
+import RevealContent from "@/app/components/RevealContent";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import {
 	Timeline,
 	TimelineConnector,
@@ -11,12 +14,7 @@ import {
 	TimelineSeparator,
 } from "@mui/lab";
 import {
-	Avatar,
 	Box,
-	Card,
-	CardActionArea,
-	CardContent,
-	Collapse,
 	Typography,
 } from "@mui/material";
 
@@ -26,179 +24,139 @@ type Experience = {
 	company: string;
 	location: string;
 	timeframe: string;
-	logoSrc?: string;
-	logoText: string;
-	logoColor: string;
 	description: string;
+	linkHref?: string;
+	linkLabel?: string;
 };
 
 const experiences: Experience[] = [
 	{
 		id: "exp-1",
 		role: "15-440 Teaching Assistant",
-		company: "Carnegie Mellon University SCS",
+		company: "Carnegie Mellon University School of Computer Science",
 		location: "Pittsburgh, PA",
-		timeframe: "Aug '25 - Dec '25",
-		logoText: "CMU",
-		logoColor: "#FFFFFF",
-		logoSrc: "images/logos/SCS_logo.jpg",
+		timeframe: "Aug - Dec '25",
 		description:
-			"Led weekly recitations, authored walkthroughs, and mentored students on project architecture, testing, and debugging practices. ",
+			"This was a really cool class that taught a wide variety of topics in distributed systems. I taught biweekly recitations for the different projects including a Go-style kvstore, a distributed bitcoin miner using customized a UDP/TCP protocol, the Raft consensus algorithm, and the actor model. I also held weekly office hours for written homework and projects.",
+		linkHref: "https://www.composablesystems.org/15-440/fa2025/syllabus/",
+		linkLabel: "440 course site",
 	},
 	{
 		id: "exp-2",
 		role: "Software Engineering Intern",
 		company: "Capital One",
 		location: "Richmond, VA",
-		timeframe: "June '25 - Aug '25",
-		logoText: "AA",
-		logoColor: "##123262",
-		logoSrc: "images/logos/c1.webp",
+		timeframe: "Jun - Aug '25",
 		description:
-			"Built data-forward features on a modern stack. Shipped dashboards, cleaned pipelines, and collaborated closely with product and design.",
+			"Built an API in Go + a full-stack application in React to manage thousands of Google Cloud Platform projects across the organization. After approval from senior engineers, we deployed the front-end on a AWS S3 bucket, and the backend on AWS ECS Fargate.",
 	},
 	{
 		id: "exp-3",
-		role: "15-112 Teaching Assitant",
+		role: "15-112 Teaching Assistant",
 		company: "Carnegie Mellon University School of Computer Science",
 		location: "Pittsburgh, PA",
-		timeframe: "Aug '24 - Dec '24",
-		logoText: "NL",
-		logoColor: "#FFFFFF",
-		logoSrc: "images/logos/SCS_logo.jpg",
+		timeframe: "Aug - Dec '24",
 		description:
-			"Prototyped client-facing features, wrote API integrations, and ran usability tests to tighten feedback loops between users and engineering.",
+			"This class sparked my love for computer science, so I had to come back to be a TA. I would teach two hour-long recitations per week on CS fundamentals and hold a 2-hour office hours on the weekend. Towards the end of the semester, I mentored 12 students through a 2-week long term project to showcase their skills.",
+		linkHref: "https://www.cs.cmu.edu/~112-f24/",
+		linkLabel: "112 course site",
 	},
 	{
 		id: "exp-4",
 		role: "Software Engineering Intern",
 		company: "Software Engineering Institute",
 		location: "Pittsburgh, PA",
-		timeframe: "May '24 - Aug '24",
-		logoText: "NL",
-		logoColor: "#FFFFFF",
-		logoSrc: "images/logos/sei_logo.png",
+		timeframe: "May - Aug '24",
 		description:
-			"Prototyped client-facing features, wrote API integrations, and ran usability tests to tighten feedback loops between users and engineering.",
+			"Throughout this summer I helped define the Insider Incident Data Exchange Standard (IIDES) and built a Python library implementing it, straightforwardly named PyIIDES. Researchers could use the library to make connections between insider threat data and act accordingly.",
+		linkHref: "https://github.com/cmu-sei/iides/blob/main/documentation/WhitePaper.md",
+		linkLabel: "IIDES white paper",
+	},
+	{
+		id: "exp-5",
+		role: "Research Assistant",
+		company: "Carnegie Mellon University Philosophy Department",
+		location: "Pittsburgh, PA",
+		timeframe: "Jun - Aug '23",
+		description:
+			"I worked with a professor interested in utilizing AI to assist with his research. First, I developed a tool using OpenAI and Python to automate the process of transcription editing. This removed the need to go through thousands of lines of interviews to remove filler words, misspellings, etc. Next, I developed an AI chatroom for students to encourage open discussion and debate on charged topics in a safe space.",
 	},
 ];
 
 export default function ExperiencePage() {
-	const [expandedIds, setExpandedIds] = useState<string[]>([]);
-
-	const handleToggle = (id: string) => {
-		setExpandedIds((current) =>
-			current.includes(id) ? current.filter((item) => item !== id) : [...current, id],
-		);
-	};
-
 	return (
-		<div className="flex min-h-screen bg-warm dark:bg-charcoal-800">
+		<div className="flex min-h-screen bg-warm dark:bg-charcoal-900">
 			<SideBar />
-			<main className="flex-1 md:ml-80 px-6 md:px-12 pt-28 md:pt-16 pb-16">
-				<h1 className="text-4xl font-bold text-charcoal dark:text-offwhite font-sans">experience</h1>
-				<p className="mt-4 text-base text-charcoal-700 dark:text-offwhite/80 font-sans">
-					A chronological history of my past experiences!
-				</p>
-
-				<section className="mt-12">
-					<Box
-						sx={{
-							"& .MuiTimeline-root": { padding: 0 },
-							"& .MuiTimelineItem-root:before": { flex: 0, padding: 0 },
-						}}
-					>
-						<Timeline position="right" className="[&_div]:text-charcoal dark:[&_div]:text-offwhite">
-							{experiences.map((exp, index) => {
-								const isExpanded = expandedIds.includes(exp.id);
-
-								return (
-									<TimelineItem key={exp.id}>
-										<TimelineSeparator className="pt-4">
-											<TimelineDot
-												sx={{
-													bgcolor: "#9CA3AF",
-													border: 0,
-													height: 12,
-													width: 12,
-												}}
-											/>
-											{index < experiences.length - 1 && (
+			<main className="flex-1 md:ml-60 pt-28 md:pt-16 pb-16">
+				<RevealContent>
+				<ContentContainer>
+					<h1 className="text-4xl pt-10 font-semi text-black dark:text-offwhite font-sans">experience</h1>
+					<section className="mt-8">
+						<Box
+							sx={{
+								"& .MuiTimeline-root": { padding: 0 },
+								"& .MuiTimelineItem-root:before": { flex: 0, padding: 0 },
+							}}
+						>
+							<Timeline position="right" className="[&_div]:text-charcoal dark:[&_div]:text-offwhite">
+								{experiences.map((exp, ) => {
+									return (
+										<TimelineItem key={exp.id}>
+											<TimelineContent sx={{ flex: 0.15, paddingRight: 2 }} className="pb-6 text-right">
+												<span className="text-xs text-charcoal-500 dark:text-offwhite/70">
+													{exp.timeframe}
+												</span>
+											</TimelineContent>
+											<TimelineSeparator>
+												<TimelineDot
+													sx={{
+														bgcolor: "#9CA3AF",
+														border: 0,
+														height: 12,
+														width: 12,
+													}}
+												/>
 												<TimelineConnector sx={{ bgcolor: "#D1D5DB", width: 2 }} />
-											)}
-										</TimelineSeparator>
-										<TimelineContent className="pb-4">
-											<Card
-												elevation={0}
-												className="border border-charcoal-200 dark:border-charcoal-600 bg-offwhite dark:bg-charcoal-700/60"
-												onClick={() => handleToggle(exp.id)}
-												sx={{
-													borderRadius: 4,
-													width: "100%",
-													maxWidth: { xs: "100%", md: 600 }, 
-													transition: "transform 120ms ease, box-shadow 120ms ease",
-													cursor: "pointer",
-													overflow: "hidden",
-													"&:hover": {
-													transform: "translateY(-2px)",
-													boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-													},
-												}}
-											>
-												<CardActionArea aria-expanded={isExpanded} className="flex flex-col items-start text-left w-full">
-													<CardContent className="w-full">
-														<Box className="flex items-center gap-4">
-															<Avatar
-																variant="square"
-																src={exp.logoSrc}
-																sx={{
-																	bgcolor: exp.logoColor,
-																	width: 52,
-																	height: 52,
-																	fontWeight: 700,
-																	borderRadius: 3,
-																	overflow: "hidden",
-																}}
-																imgProps={{ style: { objectFit: "contain", width: "100%", height: "100%" } }}
-															>
-																{exp.logoText}
-															</Avatar>
-															<Box className="flex-1">
-																<Typography component="h3" className="text-base font-semibold text-charcoal dark:text-offwhite">
-																	{exp.role}
-																</Typography>
-																<Typography className="pb-2 text-charcoal-700 dark:text-offwhite/80">
-																	{exp.company}
-																</Typography>
-																<Box className="flex flex-wrap items-center gap-2">
-																	<Typography className="text-xs italic text-charcoal-400 dark:text-offwhite/80">
-																		{exp.location}
-																	</Typography>
-																	<span className="text-charcoal-400 dark:text-offwhite/60">•</span>
-																	<Typography className="text-xs text-charcoal-600 dark:text-offwhite/70">
-																		{exp.timeframe}
-																	</Typography>	
-																</Box>
-																
-															</Box>
-														</Box>
-													</CardContent>
-													<Collapse in={isExpanded} timeout="auto" unmountOnExit>
-														<CardContent className="pt-0 pb-4">
-															<Typography className="text-sm leading-relaxed text-charcoal-700 dark:text-offwhite/80">
-																{exp.description}
-															</Typography>
-														</CardContent>
-													</Collapse>
-												</CardActionArea>
-											</Card>
-										</TimelineContent>
-									</TimelineItem>
-								);
-							})}
-						</Timeline>
-					</Box>
-				</section>
+											</TimelineSeparator>
+											<TimelineContent sx={{ flex: 0.85 }} className="pb-6">
+												<div className="w-full max-w-[640px] text-left space-y-1">
+													<div className="flex flex-col">
+														<Typography component="h3" className="text-base font-semibold text-black dark:text-offwhite">
+															{exp.role}
+														</Typography>
+														<Typography className="text-sm pb-2 text-charcoal-700 dark:text-offwhite/90">
+															{exp.company}
+														</Typography>
+														<div className="flex flex-wrap items-center gap-2 text-xs text-charcoal-500 dark:text-offwhite/70">
+															<span className="italic">
+																{exp.location}
+															</span>
+														</div>
+													</div>
+													<div className="pt-3 text-sm leading-relaxed text-charcoal-700 dark:text-offwhite/80">
+														{exp.description}
+													</div>
+													{exp.linkHref && exp.linkLabel && (
+														<Link
+															href={exp.linkHref}
+															target="_blank"
+															rel="noreferrer"
+															className="group inline-flex items-center gap-1 pt-2 text-sm font-medium text-charcoal-800 border-b border-charcoal-300 transition-colors duration-150 hover:border-charcoal-700 dark:text-offwhite dark:border-offwhite/50 dark:hover:border-offwhite"
+														>
+															{exp.linkLabel}
+															<ArrowUpRight size={14} className="translate-y-[1px] transition-transform duration-150 group-hover:-translate-y-[2px]" />
+														</Link>
+													)}
+												</div>
+											</TimelineContent>
+										</TimelineItem>
+									);
+								})}
+							</Timeline>
+						</Box>
+					</section>
+				</ContentContainer>
+				</RevealContent>
 			</main>
 		</div>
 	);
