@@ -3,19 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import type { IconType } from "react-icons";
 import {
-  SiAmazonwebservices,
-  SiFigma,
   SiFramer,
   SiNextdotjs,
-  SiNodedotjs,
-  SiOpenai,
-  SiReact,
-  SiPostgresql,
-  SiPrisma,
-  SiSupabase,
+  SiGithub,
+  SiFigma,
+  SiJavascript,
+  SiVercel,
   SiTailwindcss,
   SiTypescript,
-  SiVercel,
+  SiPython,
+  SiNumpy,
+  SiGo,
+  SiEslint,
+  SiGooglesheets,
+  SiGoogleappsscript,
 } from "react-icons/si";
 import ContentContainer from "@/app/components/ContentContainer";
 import SideBar from "@/app/components/SideBar";
@@ -33,103 +34,143 @@ type Project = {
   image: string;
   skills: Skill[];
   href?: string;
+  hrefdesc?: string,
   badge?: string;
   tone: string;
 };
 
+const OrcaScanIcon: IconType = ({ size = 16, className }) => {
+  const pixelSize = typeof size === "string" ? parseInt(size, 10) || 16 : size;
+
+  return (
+    <Image
+      src="/images/icons/orca-scan.png"
+      alt="Orca Scan"
+      width={pixelSize}
+      height={pixelSize}
+      className={className ?? ""}
+    />
+  );
+};
+
+const UpcitemdbIcon: IconType = ({ size = 16, className }) => {
+  const pixelSize = typeof size === "string" ? parseInt(size, 10) || 16 : size;
+
+  return (
+    <Image
+      src="/images/icons/upcitemdb.png"
+      alt="Orca Scan"
+      width={pixelSize}
+      height={pixelSize}
+      className={className ?? ""}
+    />
+  );
+};
+
+const NodejsIcon: IconType = ({ size = 16, className }) => {
+  const pixelSize = typeof size === "string" ? parseInt(size, 10) || 16 : size;
+
+  return (
+    <span className="relative inline-flex">
+      <Image
+        src="/svgs/node.js.svg"
+        alt="Node.js"
+        width={pixelSize}
+        height={pixelSize}
+        className={`${className ?? ""} block dark:hidden`}
+      />
+      <Image
+        src="/svgs/node.js-dark.svg"
+        alt="Node.js"
+        width={pixelSize}
+        height={pixelSize}
+        className={`${className ?? ""} hidden dark:block`}
+      />
+    </span>
+  );
+};
+
 const projects: Project[] = [
   {
-    id: "studio",
-    title: "Studio OS",
+    id: "proj_1",
+    title: "Donation Tracker",
     description:
-      "A workspace for roadmaps, approvals, and stakeholder updates. Automated intake, SLA tracking, and dashboards keep leadership in-sync without extra meetings.",
-    image: "/images/image1.jpg",
+      "Worked with Christopher's Kitchen, a 501c3 non-profit, to automate their donation value tracking process. Built the process through a phone barcode scanner, a UPC database, Google Sheets, and Google Apps Scripts. My most impactful project to date, we were able to reduce time spent tallying the value of donations by over 75%.",
+    image: "/images/projects/ck_logo.png",
     skills: [
-      { label: "Next.js", icon: SiNextdotjs },
-      { label: "TypeScript", icon: SiTypescript },
-      { label: "Tailwind", icon: SiTailwindcss },
-      { label: "Supabase", icon: SiSupabase },
-      { label: "Framer Motion", icon: SiFramer },
+      { label: "Javascript", icon: SiJavascript },
+      { label: "Orca Scan", icon: OrcaScanIcon },
+      { label: "Google Sheets", icon: SiGooglesheets },
+      { label: "Google Apps Script", icon: SiGoogleappsscript },
+      { label: "Upcitemdb", icon: UpcitemdbIcon },
     ],
     href: "https://gsha22.github.io/projects/studio",
-    badge: "live",
+    badge: "featured",
     tone: "from-accent-200/70 via-white/60 to-transparent",
   },
   {
-    id: "ai-coach",
-    title: "AI Study Coach",
+    id: "proj_2",
+    title: "Distributed Bitcoin Miner",
     description:
-      "Conversational tutor that breaks topics into micro-lessons, practice quizzes, and spaced repetition cards. Users see mastery trends and can export weekly recaps.",
-    image: "/images/giphy.gif",
+      "Developed the Live Sequence Protocol (LSP), a network protocol combining ideas from TCP and UDP to support a client-server communication model. The network protocol included techniques like the sliding window algorithm, acknowledgements, heartbeats, and checksums. Using this, I then built a load-balancer to distribute 'bitcoin mining' load across multiple of these custom servers.",
+    image: "/images/projects/bitcoinminer.png",
     skills: [
-      { label: "Next.js", icon: SiNextdotjs },
-      { label: "OpenAI", icon: SiOpenai },
-      { label: "Postgres", icon: SiPostgresql },
-      { label: "Prisma", icon: SiPrisma },
-      { label: "Vercel", icon: SiVercel },
+      { label: "Go", icon: SiGo },
+      { label: "Github", icon: SiGithub }
     ],
-    href: "https://gsha22.github.io/projects/ai-coach",
-    tone: "from-accent-100/60 via-white/30 to-transparent",
+    tone: "from-accent-100/70 via-white/50 to-transparent",
   },
   {
-    id: "portfolio",
-    title: "This Portfolio",
+    id: "proj_3",
+    title: "Mermaid Open Source",
     description:
-      "A living resume with bento navigation, responsive layout, and fast Lighthouse scores. Dark-mode aware with lightweight motion and accessible focus states.",
-    image: "/images/gsha.JPG",
+      "Contributed to Mermaid.js, an open-source text-based diagramming library used for technical documentation. Made PR's for: fixes to Gantt diagram duration parsing, support for accented characters in chart labels, and configuration bugs in gitGraph that prevented dynamic updates.",
+    image: "/images/projects/Mermaid_Logo.png",
     skills: [
       { label: "TypeScript", icon: SiTypescript },
-      { label: "Next.js", icon: SiNextdotjs },
-      { label: "Tailwind", icon: SiTailwindcss },
-      { label: "Framer Motion", icon: SiFramer },
-      { label: "Vercel", icon: SiVercel },
+      { label: "Node.js", icon: NodejsIcon },
+      { label: "Eslint", icon: SiEslint },
     ],
     tone: "from-accent-200/60 via-white/40 to-transparent",
   },
   {
-    id: "ops",
-    title: "Ops Dashboard",
+    id: "proj_4",
+    title: "Personal Portfolio",
     description:
-      "Single-pane dashboard that surfaces incidents, SLAs, and on-call handoffs. Includes streaming charts, drilldowns, and a lightweight runbook drawer.",
-    image: "/images/workin.jpg",
-    skills: [
-      { label: "Node.js", icon: SiNodedotjs },
-      { label: "TypeScript", icon: SiTypescript },
-      { label: "Postgres", icon: SiPostgresql },
-      { label: "AWS", icon: SiAmazonwebservices },
-      { label: "Figma", icon: SiFigma },
-    ],
-    href: "https://gsha22.github.io/projects/ops",
-    badge: "case study",
-    tone: "from-accent-100/70 via-white/50 to-transparent",
-  },
-  {
-    id: "climb",
-    title: "Climb Tracker",
-    description:
-      "Tracks sessions, grades, and hangboard progress. Includes weekly micro-goals, streaks, and a feed for beta notes with gym-specific tagging.",
-    image: "/images/climb.jpg",
+      "My own little nook of the internet. This was a super fun way to get more versed in web dev and exercise my creative muscles. I developed it using Next.js and a lot of inspiration from many other beautiful websites. After spending many hours staring at pixels until my eyes were bleeding, I have a newfound respect for designers.",
+    image: "/images/projects/websitedesign.png",
     skills: [
       { label: "Next.js", icon: SiNextdotjs },
       { label: "TypeScript", icon: SiTypescript },
-      { label: "Supabase", icon: SiSupabase },
       { label: "Tailwind", icon: SiTailwindcss },
+      { label: "Vercel", icon: SiVercel },
+      { label: "Framer Motion", icon: SiFramer },
+      { label: "Figma", icon: SiFigma}
     ],
     tone: "from-accent-200/50 via-white/30 to-transparent",
   },
   {
-    id: "student-life",
-    title: "Student Life",
+    id: "proj_5",
+    title: "Character Reconition NN",
     description:
-      "Aggregates events, RSVPs, and peer groups into one feed. Pushes reminders, showcases photos, and gives organizers quick analytics on turnout.",
-    image: "/images/student1.jpg",
+      "Implemented a neural network in Python to perform handwritten character recognition on an OCR dataset. The project involved deriving and coding forward propagation and backpropagation by hand, implementing sigmoid and softmax layers, and training the model using stochastic gradient descent.",
+    image: "/images/projects/nn.png",
     skills: [
-      { label: "React", icon: SiReact },
-      { label: "TypeScript", icon: SiTypescript },
-      { label: "Tailwind", icon: SiTailwindcss },
-      { label: "Framer Motion", icon: SiFramer },
+      { label: "Python", icon: SiPython },
+      { label: "Numpy", icon: SiNumpy },
     ],
-    href: "https://gsha22.github.io/projects/student-life",
+    tone: "from-accent-100/60 via-white/30 to-transparent",
+  },
+  {
+    id: "proj_6",
+    title: "Raft Consensus",
+    description:
+      "Super interesting project taking a deep dive on the Raft distributed consensus algorithms. Using the paper by Diego Ongaro and John Ousterhout as a guide, I built a version from scratch in Go supporting leader elections, log replication, and the long list of edge cases associated with maintainence across network partitions and node failures.",
+    image: "/images/projects/raft.png",
+    skills: [
+      { label: "Go", icon: SiGo },
+      { label: "Github", icon: SiGithub },
+    ],
     tone: "from-accent-100/60 via-white/30 to-transparent",
   },
 ];

@@ -2,6 +2,7 @@ import ContentContainer from "@/app/components/ContentContainer";
 import SideBar from "@/app/components/SideBar";
 import RevealContent from "@/app/components/RevealContent";
 import { LinkedinIcon, Github, Instagram, Mail, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   const quickLinks = [
@@ -33,15 +34,20 @@ export default function Home() {
       <main className="flex-1 md:ml-60 pt-28 md:pt-16 pb-16">
         <RevealContent>
         <ContentContainer>
-          <h1 className="pt-10 text-4xl font-semi text-black dark:text-offwhite font-sans">Gabriel Sha</h1>
+          <h1 className="pt-10 text-4xl font-semi text-black dark:text-offwhite font-sans">gabriel sha</h1>
           <p className="mt-4 text-charcoal-700 dark:text-offwhite/80 font-sans pt-8">
             Hello! My name is Gabriel, and I&apos;m a <b>software engineer</b> and a <b>student at Carnegie Mellon University</b> studying Information Systems and Computer Science. 
             <br/><br/>
-            Studying IS and CS at Carnegie Mellon has taught me more than just how to code or do math, it&apos;s shaped the way I approach problems. I&apos;m confident in my ability to adapt, learn quickly, and tackle unfamiliar challenges. 
+            Studying IS and CS at Carnegie Mellon has taught me more than just how to code or do math, it&apos;s taught me how to solve difficult problems. Because of the countless times I&apos;ve had to struggle through problems I had absolutely no bearing on, I&apos;m confident in my ability to adapt, learn quickly, and tackle unfamiliar challenges. 
             <br/><br/>
-            I love software engineering because it lets me do exactly that: solve interesting problems while creating meaningful, real-world products. There is no end to the amazing things to work on, and I look forward to using my background to tackle new and exciting problems everyday. 
+            I love software engineering because it lets me do exactly that while creating meaningful, real-world products. There is no end to the amazing things to work on, and I look forward to using my background to tackle new and exciting problems everyday. 
             <br/><br/>
-            Outside of tech I love climbing, the outdoors, and piano. You can find photos of me with friends, family, and participating in random hobbies here. I also love anime and gaming. See if we&apos;ve watched or played anything in common!
+            Outside of tech, some of the things I love are climbing, the outdoors, and piano. If interested, you can get a little glimpse of my life <Link
+									href="/gallery"
+									className="underline decoration-charcoal-500 dark:decoration-offwhite/70 underline-offset-4 transition-[text-decoration-thickness] hover:decoration-2"
+								>
+									here.
+								</Link>{" "}
           </p>
 
           <p className="pt-8 font-medium">find me on</p>

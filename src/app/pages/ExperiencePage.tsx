@@ -37,9 +37,9 @@ const experiences: Experience[] = [
 		location: "Pittsburgh, PA",
 		timeframe: "Aug - Dec '25",
 		description:
-			"This was a really cool class that taught a wide variety of topics in distributed systems. I taught biweekly recitations for the different projects including a Go-style kvstore, a distributed bitcoin miner using customized a UDP/TCP protocol, the Raft consensus algorithm, and the actor model. I also held weekly office hours for written homework and projects.",
+			"440 is a really cool class that teaches a wide variety of topics in distributed systems, so I was excited to come back to the topics as a TA. I taught biweekly recitations for the different projects including a Go-style kvstore, a distributed bitcoin miner using customized a UDP/TCP protocol, the Raft consensus algorithm, and the actor model. I also held weekly office hours for written homework and projects.",
 		linkHref: "https://www.composablesystems.org/15-440/fa2025/syllabus/",
-		linkLabel: "440 course site",
+		linkLabel: "F25 440 course site",
 	},
 	{
 		id: "exp-2",
@@ -57,9 +57,9 @@ const experiences: Experience[] = [
 		location: "Pittsburgh, PA",
 		timeframe: "Aug - Dec '24",
 		description:
-			"This class sparked my love for computer science, so I had to come back to be a TA. I would teach two hour-long recitations per week on CS fundamentals and hold a 2-hour office hours on the weekend. Towards the end of the semester, I mentored 12 students through a 2-week long term project to showcase their skills.",
+			"This class is what sparked my love for computer science, and I wanted to pay that excitement forward coming back. I would teach two hour-long recitations per week on CS fundamentals and hold a 2 hour office hours on the weekend. Towards the end of the semester, I mentored 12 students through a 2 week long term project to showcase their skills.",
 		linkHref: "https://www.cs.cmu.edu/~112-f24/",
-		linkLabel: "112 course site",
+		linkLabel: "F24 112 course site",
 	},
 	{
 		id: "exp-4",
@@ -94,15 +94,15 @@ export default function ExperiencePage() {
 					<section className="mt-8">
 						<Box
 							sx={{
-								"& .MuiTimeline-root": { padding: 0 },
-								"& .MuiTimelineItem-root:before": { flex: 0, padding: 0 },
+								"& .MuiTimeline-root": { padding: 0, margin: 0 },
+								"& .MuiTimelineItem-root:before": { flex: 0, padding: 0, margin: 0 },
 							}}
 						>
 							<Timeline position="right" className="[&_div]:text-charcoal dark:[&_div]:text-offwhite">
 								{experiences.map((exp, ) => {
 									return (
 										<TimelineItem key={exp.id}>
-											<TimelineContent sx={{ flex: 0.15, paddingRight: 2 }} className="pb-6 text-right">
+											<TimelineContent sx={{ flex: 0.15, paddingLeft: 0 }} className="pb-6 text-right hidden md:block">
 												<span className="text-xs text-charcoal-500 dark:text-offwhite/70">
 													{exp.timeframe}
 												</span>
@@ -130,6 +130,9 @@ export default function ExperiencePage() {
 														<div className="flex flex-wrap items-center gap-2 text-xs text-charcoal-500 dark:text-offwhite/70">
 															<span className="italic">
 																{exp.location}
+															</span>
+															<span className="md:hidden">
+																• {exp.timeframe}
 															</span>
 														</div>
 													</div>

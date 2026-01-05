@@ -30,7 +30,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile / tablet top nav */}
-      <header className="md:hidden fixed top-0 left-0 right-0 bg-warm dark:bg-charcoal-800 shadow-sm z-20">
+      <header className="md:hidden fixed top-0 left-0 right-0 bg-warm dark:bg-charcoal-900 shadow-sm z-20">
         <div className="flex items-center justify-between px-4 py-3">
           <Link
             href="/"
@@ -76,7 +76,7 @@ export default function Sidebar() {
           </button>
         </div>
         <div
-          className="border-t border-charcoal-100 dark:border-charcoal-700 bg-warm dark:bg-charcoal-800 shadow-md overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+          className="border-t border-charcoal-100 dark:border-charcoal-700 bg-warm dark:bg-charcoal-900 shadow-md overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
           style={{
             maxHeight: isOpen ? "500px" : "0px",
             opacity: isOpen ? 1 : 0,
