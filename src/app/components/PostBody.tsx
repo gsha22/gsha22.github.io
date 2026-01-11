@@ -39,17 +39,19 @@ const markdownComponents: Components = {
     const height = restHeight ? Number(restHeight) : 800;
 
     return (
-      <Image
-        src={normalizedSrc}
-        alt={alt}
-        className={className}
-        width={width}
-        height={height}
-        unoptimized
-        sizes="100vw"
-        style={{ height: "auto", width: "100%" }}
-        {...otherProps}
-      />
+      <span className="post-image-wrapper">
+        <Image
+          src={normalizedSrc}
+          alt={alt}
+          className={className}
+          width={width}
+          height={height}
+          unoptimized
+          sizes="100vw"
+          style={{ height: "auto", width: "100%", display: "block" }}
+          {...otherProps}
+        />
+      </span>
     );
   },
   a: ({ children, ...rest }) => (

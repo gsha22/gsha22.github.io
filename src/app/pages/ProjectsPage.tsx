@@ -95,7 +95,7 @@ const projects: Project[] = [
     id: "proj_1",
     title: "Donation Tracker",
     description:
-      "Worked with Christopher's Kitchen, a 501c3 non-profit, to automate their donation value tracking process. Built the process through a phone barcode scanner, a UPC database, Google Sheets, and Google Apps Scripts. My most impactful project to date, we were able to reduce time spent tallying the value of donations by over 75%.",
+      "Worked with Christopher's Kitchen, a 501c3 non-profit, to automate their donation value tracking process. Built the process through a phone barcode scanner, a UPC database, Google Sheets, and Google Apps Scripts. Definitely my most visibly impactful project to date, we were able to free volunteer hours by reducing the time spent tallying donations by over 75%.",
     image: "/images/projects/ck_logo.png",
     skills: [
       { label: "Javascript", icon: SiJavascript },
@@ -104,7 +104,8 @@ const projects: Project[] = [
       { label: "Google Apps Script", icon: SiGoogleappsscript },
       { label: "Upcitemdb", icon: UpcitemdbIcon },
     ],
-    href: "https://gsha22.github.io/projects/studio",
+    href: "/blog/ck-post",
+    hrefdesc: "more!",
     badge: "featured",
     tone: "from-accent-200/70 via-white/60 to-transparent",
   },
@@ -227,7 +228,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.href}
               className="group/link inline-flex items-center gap-2 rounded-full bg-charcoal-900/5 px-3 py-1.5 text-xs font-medium text-charcoal-800 opacity-0 shadow-sm transition-all duration-200 hover:bg-charcoal-900/10 hover:shadow group-hover:opacity-100 dark:bg-offwhite/10 dark:text-offwhite dark:hover:bg-offwhite/20"
             >
-              details
+              {project.hrefdesc}
               <ArrowUpRight size={16} className="transition-transform duration-200 group-hover/link:-translate-y-[2px]" />
             </Link>
           )}

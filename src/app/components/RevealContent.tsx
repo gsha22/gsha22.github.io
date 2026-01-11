@@ -31,6 +31,7 @@ export default function RevealContent({
   const containerRef = useRef<HTMLDivElement>(null);
   const [duration, setDuration] = useState(0.8);
   const [canAnimate, setCanAnimate] = useState(false);
+  const [showMask, setShowMask] = useState(true);
 
   // Single motion value that drives the gradient position (0 -> 1).
   const progress = useMotionValue(startProgress);
@@ -77,13 +78,23 @@ export default function RevealContent({
 
     setDuration(calculatedDuration);
     progress.set(startProgress);
+    setShowMask(true);
+
+    let cancelled = false;
 
     const controls = animate(progress, 1, {
       duration: calculatedDuration,
       ease: "linear",
     });
 
-    return () => controls.stop();
+    controls.then(() => {
+      if (!cancelled) setShowMask(false);
+    });
+
+    return () => {
+      cancelled = true;
+      controls.stop();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [children, speed, startProgress, canAnimate]);
 
@@ -91,8 +102,8 @@ export default function RevealContent({
     <motion.div
       ref={containerRef}
       style={{
-        maskImage: maskGradient,
-        WebkitMaskImage: maskGradient,
+        maskImage: showMask ? maskGradient : "none",
+        WebkitMaskImage: showMask ? maskGradient : "none",
         maskSize: "100% 100%",
         WebkitMaskSize: "100% 100%",
         maskRepeat: "no-repeat",

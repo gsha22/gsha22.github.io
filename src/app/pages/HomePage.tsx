@@ -31,14 +31,14 @@ export default function Home() {
   return (
     <div className="flex min-h-screen bg-warm dark:bg-charcoal-900">
       <SideBar />
-      <main className="flex-1 md:ml-60 pt-28 md:pt-16 pb-16">
+      <main className="flex-1 md:ml-60 pt-28 md:pt-16 ">
         <RevealContent>
         <ContentContainer>
           <h1 className="pt-10 text-4xl font-semi text-black dark:text-offwhite font-sans">gabriel sha</h1>
           <p className="mt-4 text-charcoal-700 dark:text-offwhite/80 font-sans pt-8">
             Hello! My name is Gabriel, and I&apos;m a <b>software engineer</b> and a <b>student at Carnegie Mellon University</b> studying Information Systems and Computer Science. 
             <br/><br/>
-            Studying IS and CS at Carnegie Mellon has taught me more than just how to code or do math, it&apos;s taught me how to solve difficult problems. Because of the countless times I&apos;ve had to struggle through problems I had absolutely no bearing on, I&apos;m confident in my ability to adapt, learn quickly, and tackle unfamiliar challenges. 
+            Studying IS and CS at Carnegie Mellon has taught me more than just how to code or do math, it&apos;s taught me how to think through complex problems. Because of this, I&apos;m confident in my ability to adapt, learn quickly, and tackle unfamiliar challenges. 
             <br/><br/>
             I love software engineering because it lets me do exactly that while creating meaningful, real-world products. There is no end to the amazing things to work on, and I look forward to using my background to tackle new and exciting problems everyday. 
             <br/><br/>

@@ -8,13 +8,13 @@ import { ArrowUpRight } from "lucide-react";
 export default function BlogPage() {
 	return (
 		<div className="flex min-h-screen bg-warm dark:bg-charcoal-900">
-			<main className="flex-1 pt-20 pb-16">
+			<main className="flex-1 pt-20">
 				<RevealContent>
 				<ContentContainer>
 					<div className="">
 						<h1 className="pt-8 text-4xl font-semi text-charcoal dark:text-offwhite font-sans">gabriel sha&apos;s blog</h1>
 						<p className="mt-4 text-charcoal-700 dark:text-offwhite/80 font-sans">
-							Random thoughts about anything. Hope to fill this up with lot&apos;s of randomness. 
+							Random thoughts about anything. Posts will be about anything I might find interesting or want to write about, and they may be serious or unserious.
 						</p>
 						<Link
 							href="/"
@@ -28,12 +28,21 @@ export default function BlogPage() {
 						<ul className="space-y-3 text-charcoal-800 dark:text-offwhite">
 							<li className="flex items-baseline gap-3">
 								<Link
-									href="/blog/markdown-ready-posts"
+									href="/blog/hello-world"
 									className="font-medium border-b border-transparent transition-colors duration-150 hover:border-charcoal-700 dark:hover:border-offwhite"
 								>
-									markdown-ready blogging
+									hello world!
 								</Link>
 								<span className="text-sm text-charcoal-600 dark:text-offwhite/60">Jan 5, 2026</span>
+							</li>
+							<li className="flex items-baseline gap-3">
+								<Link
+									href="/blog/ck-post"
+									className="font-medium border-b border-transparent transition-colors duration-150 hover:border-charcoal-700 dark:hover:border-offwhite"
+								>
+									meaningful impact with tech
+								</Link>
+								<span className="text-sm text-charcoal-600 dark:text-offwhite/60">Jan 9, 2026</span>
 							</li>
 						</ul>
 					</div>
