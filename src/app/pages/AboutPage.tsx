@@ -34,7 +34,7 @@ export default function AboutPage() {
 	return (
 		<div className="flex min-h-screen bg-warm dark:bg-charcoal-900">
 			<SideBar />
-			<main className="flex-1 md:ml-60 pt-28 md:pt-16 pb-16">
+			<main className="flex-1 md:ml-60 pt-28 md:pt-16">
 				<RevealContent>
 				<ContentContainer>
 					<h1 className="text-4xl pt-10 font-semi text-black dark:text-offwhite font-sans">about</h1>

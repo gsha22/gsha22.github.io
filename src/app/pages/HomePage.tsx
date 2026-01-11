@@ -42,12 +42,9 @@ export default function Home() {
             <br/><br/>
             I love software engineering because it lets me do exactly that while creating meaningful, real-world products. There is no end to the amazing things to work on, and I look forward to using my background to tackle new and exciting problems everyday. 
             <br/><br/>
-            Outside of tech, some of the things I love are climbing, the outdoors, and piano. If interested, you can get a little glimpse of my life <Link
-									href="/gallery"
-									className="underline decoration-charcoal-500 dark:decoration-offwhite/70 underline-offset-4 transition-[text-decoration-thickness] hover:decoration-2"
-								>
-									here.
-								</Link>{" "}
+            Outside of tech, some of the things I love are climbing, the outdoors, volleyball, and piano. 
+            <br/><br/>
+            Feel free to reach out to me about anything! I&apos;m always happy to chat. 
           </p>
 
           <p className="pt-8 font-medium">find me on</p>

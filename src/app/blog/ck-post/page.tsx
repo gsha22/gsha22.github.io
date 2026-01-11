@@ -148,7 +148,7 @@ Thanks for reading! - Gabe
 export default function MarkdownReadyPost() {
   return (
     <div className="flex min-h-screen bg-warm dark:bg-charcoal-900">
-      <main className="flex-1 pt-20 pb-16">
+      <main className="flex-1 pt-20">
         <RevealContent>
           <ContentContainer>
             <div className="space-y-6">

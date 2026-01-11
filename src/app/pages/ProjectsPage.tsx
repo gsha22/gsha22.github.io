@@ -131,11 +131,24 @@ const projects: Project[] = [
       { label: "TypeScript", icon: SiTypescript },
       { label: "Node.js", icon: NodejsIcon },
       { label: "Eslint", icon: SiEslint },
+      { label: "Github", icon: SiGithub },
     ],
     tone: "from-accent-200/60 via-white/40 to-transparent",
   },
   {
     id: "proj_4",
+    title: "Raft Consensus",
+    description:
+      "Super interesting project taking a deep dive on the Raft distributed consensus algorithms. Using the paper by Diego Ongaro and John Ousterhout as a guide, I built a version from scratch in Go supporting leader elections, log replication, and the long list of edge cases associated with maintainence across network partitions and node failures.",
+    image: "/images/projects/raft.png",
+    skills: [
+      { label: "Go", icon: SiGo },
+      { label: "Github", icon: SiGithub },
+    ],
+    tone: "from-accent-100/60 via-white/30 to-transparent",
+  },
+  {
+    id: "proj_5",
     title: "Personal Portfolio",
     description:
       "My own little nook of the internet. This was a super fun way to get more versed in web dev and exercise my creative muscles. I developed it using Next.js and a lot of inspiration from many other beautiful websites. After spending many hours staring at pixels until my eyes were bleeding, I have a newfound respect for designers.",
@@ -146,12 +159,13 @@ const projects: Project[] = [
       { label: "Tailwind", icon: SiTailwindcss },
       { label: "Vercel", icon: SiVercel },
       { label: "Framer Motion", icon: SiFramer },
-      { label: "Figma", icon: SiFigma}
+      { label: "Figma", icon: SiFigma},
+      { label: "Github", icon: SiGithub },
     ],
     tone: "from-accent-200/50 via-white/30 to-transparent",
   },
   {
-    id: "proj_5",
+    id: "proj_6",
     title: "Character Reconition NN",
     description:
       "Implemented a neural network in Python to perform handwritten character recognition on an OCR dataset. The project involved deriving and coding forward propagation and backpropagation by hand, implementing sigmoid and softmax layers, and training the model using stochastic gradient descent.",
@@ -159,18 +173,6 @@ const projects: Project[] = [
     skills: [
       { label: "Python", icon: SiPython },
       { label: "Numpy", icon: SiNumpy },
-    ],
-    tone: "from-accent-100/60 via-white/30 to-transparent",
-  },
-  {
-    id: "proj_6",
-    title: "Raft Consensus",
-    description:
-      "Super interesting project taking a deep dive on the Raft distributed consensus algorithms. Using the paper by Diego Ongaro and John Ousterhout as a guide, I built a version from scratch in Go supporting leader elections, log replication, and the long list of edge cases associated with maintainence across network partitions and node failures.",
-    image: "/images/projects/raft.png",
-    skills: [
-      { label: "Go", icon: SiGo },
-      { label: "Github", icon: SiGithub },
     ],
     tone: "from-accent-100/60 via-white/30 to-transparent",
   },
@@ -254,14 +256,11 @@ export default function ProjectsPage() {
   return (
     <div className="flex min-h-screen bg-warm dark:bg-charcoal-900 font-[var(--font-inter)] font-sans">
       <SideBar />
-      <main className="flex-1 md:ml-60 pt-28 md:pt-16 pb-16 font-sans">
+      <main className="flex-1 md:ml-60 pt-28 md:pt-16 font-sans">
         <RevealContent>
         <ContentContainer>
           <header className="max-w-xl pt-8 pb-10">
             <h1 className="mt-2 text-4xl font-semi text-black dark:text-offwhite font-sans">projects</h1>
-            {/* <p className="mt-3 text-base text-charcoal-700 dark:text-offwhite/75 font-sans">
-              Some things I did for fun. 
-            </p> */}
           </header>
 
           <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 auto-rows-[minmax(340px,1fr)] gap-6 justify-items-center">
