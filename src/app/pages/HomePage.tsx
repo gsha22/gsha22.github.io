@@ -2,7 +2,6 @@ import ContentContainer from "@/app/components/ContentContainer";
 import SideBar from "@/app/components/SideBar";
 import RevealContent from "@/app/components/RevealContent";
 import { LinkedinIcon, Github, Instagram, Mail, ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 export default function Home() {
   const quickLinks = [
