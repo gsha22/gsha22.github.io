@@ -10,6 +10,7 @@ import {
   Copyright,
   Menu,
   X,
+  Heart,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -105,7 +106,15 @@ export default function Sidebar() {
           </nav>
           <div className="px-6 py-3 pb-8">
             <p className="text-xs text-charcoal-600 dark:text-offwhite/80 flex items-center justify-center gap-1 font-sans font-medium text-center">
-              <Copyright size={10} /> 2026 with ❤️ by Gabriel
+              <Copyright size={10} /> 2026 with
+              <Heart
+                size={12}
+                fill="currentColor"
+                strokeWidth={1.75}
+                className="text-red-500 dark:text-red-400 animate-pulse drop-shadow-[0_0_6px_rgba(239,68,68,0.45)]"
+                aria-hidden
+              />
+              by Gabriel
             </p>
           </div>
         </div>
@@ -154,7 +163,15 @@ export default function Sidebar() {
         </div>
         <div className="mt-auto pt-8 w-fit border-t border-charcoal-100 dark:border-charcoal-700">
           <p className="text-xs text-charcoal-600 dark:text-offwhite/80 font-sans font-medium flex items-center gap-1 px-4">
-            <Copyright size={10} /> 2026 with ❤️ by Gabriel
+            <Copyright size={10} /> 2026 with
+            <Heart
+              size={12}
+              fill="currentColor"
+              strokeWidth={1.75}
+              className="text-red-500 dark:text-red-400 animate-pulse drop-shadow-[0_0_6px_rgba(239,68,68,0.45)]"
+              aria-hidden
+            />
+            by Gabriel
           </p>
         </div>
       </aside>
