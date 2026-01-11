@@ -73,7 +73,7 @@ const NodejsIcon: IconType = ({ size = 16, className }) => {
   return (
     <span className="relative inline-flex">
       <Image
-        src="/images/icons/node.js.svg"
+        src="/images/icons/node.js.png"
         alt="Node.js"
         width={pixelSize}
         height={pixelSize}
