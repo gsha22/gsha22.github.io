@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gabriel Sha",
+  title: "gabriel sha",
   icons: {
     icon: "/g.svg"
   }

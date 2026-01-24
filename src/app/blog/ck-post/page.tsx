@@ -152,6 +152,12 @@ export default function MarkdownReadyPost() {
         <RevealContent>
           <ContentContainer>
             <div className="space-y-6">
+              <Link
+                  href="/blog"
+                  className="inline-flex items-center text-sm font-medium text-charcoal-700 underline-offset-4 hover:underline dark:text-offwhite/80"
+                >
+                  ← back to posts
+              </Link>
               <PostBody markdown={markdown} />
               <Link
                 href="/blog"
