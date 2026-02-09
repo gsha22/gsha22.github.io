@@ -24,12 +24,19 @@ type Experience = {
 	company: string;
 	location: string;
 	timeframe: string;
-	description: string;
+	description?: string;
 	linkHref?: string;
 	linkLabel?: string;
 };
 
 const experiences: Experience[] = [
+	{
+		id: "exp-0",
+		role: "Incoming Software Engineer",
+		company: "Bloomberg",
+		location: "New York City, NY",
+		timeframe: "Current",
+	},
 	{
 		id: "exp-1",
 		role: "15-440 Teaching Assistant",

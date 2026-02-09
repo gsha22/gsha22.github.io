@@ -121,7 +121,7 @@ export default function Sidebar() {
       </header>
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex pl-8 pt-16 pb-10 flex-col fixed h-full bg-warm dark:bg-charcoal-900 w-60 items-start shadow-sm">
+      <aside className="hidden md:flex pl-8 pt-16 pb-10 flex-col fixed h-full bg-warm dark:bg-charcoal-900 w-60 items-start shadow-sm z-10">
         <Link
           href="/"
           className="flex pl-4 pb-4 items-center mb-2 rounded-lg transition-all duration-200 hover:scale-105 cursor-pointer"
