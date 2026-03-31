@@ -199,7 +199,7 @@ function SkillBadge({ icon: Icon, label }: SkillBadgeProps) {
 function ProjectCard({ project }: { project: Project }) {
   return (
     <article
-      className="group relative flex h-full w-full max-w-xl flex-col overflow-hidden rounded-xl border border-charcoal-100/80 bg-white/30 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.35)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:border-charcoal-600/60 dark:bg-charcoal-600/70"
+      className="group relative flex h-full w-full max-w-2xl flex-col overflow-hidden rounded-lg border border-charcoal-100/80 bg-white/30 shadow-[0_12px_32px_-26px_rgba(0,0,0,0.25)] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-22px_rgba(0,0,0,0.14)] dark:border-charcoal-600/60 dark:bg-charcoal-600/70"
     >
       <div className="absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-200 group-hover:opacity-80 dark:bg-charcoal-50/10" />
       {project.badge && (
@@ -217,7 +217,6 @@ function ProjectCard({ project }: { project: Project }) {
           sizes="(min-width: 1200px) 440px, (min-width: 768px) 50vw, 100vw"
           priority={project.id === "studio"}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-900/35 via-transparent to-transparent" />
       </div>
 
       <div className="relative flex flex-1 flex-col gap-4 p-6 font-sans">
@@ -246,7 +245,7 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="pointer-events-none absolute inset-0 rounded-3xl ring-0 ring-accent-400/0" />
+        <div className="pointer-events-none absolute inset-0 rounded-lg ring-0 ring-accent-400/0" />
       </div>
     </article>
   );
@@ -258,12 +257,12 @@ export default function ProjectsPage() {
       <SideBar />
       <main className="flex-1 md:ml-60 pt-28 md:pt-16 font-sans">
         <RevealContent>
-        <ContentContainer>
+        <ContentContainer className="lg:max-w-6xl">
           <header className="max-w-xl pt-8 pb-10">
             <h1 className="mt-2 text-4xl font-semi text-black dark:text-offwhite font-sans">projects</h1>
           </header>
 
-          <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 auto-rows-[minmax(340px,1fr)] gap-6 justify-items-center">
+          <section className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 auto-rows-[minmax(340px,1fr)] gap-4">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
