@@ -14,12 +14,12 @@ export default {
         primary: ["DM Sans"],
       },
       colors: {
-        // Warm off-white background for light mode
+        // Off-white background for light mode (cooler/less cream)
         warm: {
-          DEFAULT: "#F7F4EE",
-          50: "#FBFAF7",
-          100: "#F7F4EE",
-          200: "#EFE9E0",
+          DEFAULT: "#FAFAF8",
+          50: "#FFFFFF",
+          100: "#FAFAF8",
+          200: "#F2F3F5",
         },
         // Deep charcoal for dark backgrounds and near-black text (softened)
         charcoal: {

@@ -12,10 +12,10 @@ module.exports = {
     extend: {
       colors: {
         warm: {
-          DEFAULT: "#F7F4EE",
-          50: "#FBFAF7",
-          100: "#F7F4EE",
-          200: "#EFE9E0",
+          DEFAULT: "#FAFAF8",
+          50: "#FFFFFF",
+          100: "#FAFAF8",
+          200: "#F2F3F5",
         },
         charcoal: {
           DEFAULT: "#393939", // figma dark gray
