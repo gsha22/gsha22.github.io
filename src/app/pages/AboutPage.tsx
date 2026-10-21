@@ -102,7 +102,7 @@ export default function AboutPage() {
 						</div>
 						<div className="w-56 sm:w-64 shrink-0 mx-auto md:mx-0 md:mt-2">
 							<Image
-								src="/images/me.JPG"
+								src="/images/me.jpg"
 								width={300}
 								height={400}
 								alt="Gabriel"
