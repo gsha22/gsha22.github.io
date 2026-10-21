@@ -15,9 +15,9 @@ export default function BlogPage() {
 				<RevealContent>
 				<ContentContainer>
 					<div className="">
-						<h1 className="pt-8 text-4xl font-semi text-charcoal dark:text-offwhite font-sans">gabriel&apos;s blog</h1>
-						<p className="mt-4 text-charcoal-700 dark:text-offwhite/80 font-sans">
-							Random thoughts about anything. Posts will be about anything I might find interesting or want to write about, and they may be serious or unserious.
+						<h1 className="py-10 text-4xl font-semi text-charcoal dark:text-offwhite font-sans">gabriel&apos;s blog</h1>
+						<p className=" text-charcoal-700 dark:text-offwhite/80 font-sans">
+							At this point in time there is not a lot here but I intend on writing more consistently.
 						</p>
 						<h2 className="pt-8 text-2xl font-semi text-black dark:text-offwhite font-sans mb-5">posts</h2>
 						<ul className="space-y-3 text-charcoal-800 dark:text-offwhite">

@@ -23,7 +23,7 @@ export default function Home() {
     {
       name: "Email",
       icon: Mail,
-      url: "mailto:gsha@andrew.cmu.edu",
+      url: "mailto:gabrielhjsha22@gmail.com",
     },
   ];
 
@@ -33,18 +33,17 @@ export default function Home() {
       <main className="flex-1 md:ml-60 pt-28 md:pt-16 ">
         <RevealContent>
         <ContentContainer>
-          <h1 className="pt-10 text-4xl font-semi text-black dark:text-offwhite font-sans">gabriel sha</h1>
-          <p className="mt-4 text-charcoal-700 dark:text-offwhite/80 font-sans pt-8">
-            Hello! My name is Gabriel, and I&apos;m a <b>software engineer</b> and a <b>student at Carnegie Mellon University</b> studying Information Systems and Computer Science. 
-            <br/><br/>
-            Studying IS and CS at Carnegie Mellon has taught me more than just how to code or do math, it&apos;s taught me how to think through complex problems. Because of this, I&apos;m confident in my ability to adapt, learn quickly, and tackle unfamiliar challenges. 
-            <br/><br/>
-            I love software engineering because it lets me do exactly that while creating meaningful, real-world products. There is no end to the amazing things to work on, and I look forward to using my background to tackle new and exciting problems everyday. 
-            <br/><br/>
-            Outside of tech, some of the things I love are climbing, the outdoors, volleyball, and piano. 
-            <br/><br/>
-            Feel free to reach out to me about anything! I&apos;m always happy to chat. 
-          </p>
+          <h1 className="pt-10 text-4xl font-semi text-black dark:text-offwhite font-sans pb-8">gabriel sha</h1>
+          <div className="text-base text-charcoal-700 dark:text-offwhite/80 font-sans leading-relaxed space-y-4">
+            <p>
+              Hello! I&apos;m a software engineer at Bloomberg and recent Carnegie Mellon graduate. I enjoy building large-scale distributed systems and figuring out how to put the many moving pieces together. 
+            </p>
+            <p>I try to fill my free time with climbing, playing volleyball, spending time with friends and family, and playing the piano. </p>
+            <p>
+              If there is anything at all that we have in common, feel free to reach out! I&apos;m always down to chat!
+            </p>
+          </div>
+          
 
           <p className="pt-8 font-medium">find me on</p>
           <div className="flex flex-wrap gap-6 pt-4">

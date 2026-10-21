@@ -95,8 +95,10 @@ export default function RevealContent({
       cancelled = true;
       controls.stop();
     };
+    // Intentionally omit `children`: nested state updates (e.g. bio toggle)
+    // should not replay the page reveal.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [children, speed, startProgress, canAnimate]);
+  }, [speed, startProgress, canAnimate]);
 
   return (
     <motion.div

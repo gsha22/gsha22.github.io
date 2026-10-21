@@ -4,7 +4,7 @@ import RevealContent from "@/app/components/RevealContent";
 import { Github, Instagram, LinkedinIcon, Mail } from "lucide-react";
 
 const socials = [
-	{ name: "Email", href: "mailto:gsha@andrew.cmu.edu", icon: Mail },
+	{ name: "Email", href: "mailto:gabrielhjsha22@gmail.com", icon: Mail },
 	{ name: "LinkedIn", href: "https://www.linkedin.com/in/gabriel-sha-64b581251/", icon: LinkedinIcon },
 	{ name: "Instagram", href: "https://www.instagram.com/gsha_22/", icon: Instagram },
 	{ name: "GitHub", href: "https://github.com/gsha22", icon: Github },
@@ -18,7 +18,7 @@ export default function ContactPage() {
 				<RevealContent>
 				<ContentContainer>
 					<h1 className="text-4xl pt-10 font-semi text-black dark:text-offwhite font-sans">contact</h1>
-					<p className="mt-4 text-charcoal-700 dark:text-offwhite/80 font-sans">
+					<p className="mt-8 text-charcoal-700 dark:text-offwhite/80 font-sans">
 						Feel free to reach out! I am happy to talk about working together, common interests, or to answer questions you may have. 
 					</p>
 					<section className="mt-10">
@@ -30,7 +30,7 @@ export default function ContactPage() {
 									href={href}
 									target="_blank"
 									rel="noreferrer noopener"
-									className="group flex items-center rounded-lg border border-charcoal-100 bg-offwhite px-3 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-200 hover:shadow-sm dark:border-charcoal-600 dark:bg-charcoal-700"
+									className="group flex items-center rounded-lg border border-charcoal-100 bg-warm-200 px-3 py-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-accent-200 hover:shadow-sm dark:border-charcoal-600 dark:bg-charcoal-700"
 								>
 									<span className="flex h-9 w-9 items-center justify-center rounded-md bg-warm-200 text-charcoal transition-colors group-hover:bg-accent-50 group-hover:text-accent-700 dark:bg-charcoal-700 dark:text-offwhite dark:group-hover:bg-charcoal-600">
 										<Icon className="h-4 w-4" aria-hidden />

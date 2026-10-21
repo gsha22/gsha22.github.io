@@ -18,15 +18,13 @@ import Link from "next/link";
 const links = [
   { href: "/about", label: "about", icon: User },
   { href: "/experience", label: "experience", icon: Settings },
-  { href: "/projects", label: "projects", icon: Rocket },
+  // { href: "/projects", label: "projects", icon: Rocket },
   { href: "/blog", label: "blog", icon: PenTool },
+  { href: "/contact", label: "contact", icon: Send },
 ];
-
-const contactLink = { href: "/contact", label: "contact", icon: Send };
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const ContactIcon = contactLink.icon;
 
   return (
     <>
@@ -85,7 +83,7 @@ export default function Sidebar() {
             pointerEvents: isOpen ? "auto" : "none",
           }}
         >
-          <nav className="pt-8 pb-8 flex flex-col gap-5 px-1">
+          <nav className="pt-8 pb-8 flex flex-col gap-7 px-1">
             {links.map(({ href, label, icon: Icon }) => (
               <Link
                 key={href}
@@ -96,13 +94,6 @@ export default function Sidebar() {
                 <Icon size={18} className="transition-colors group-hover:text-accent-600" /> {label}
               </Link>
             ))}
-            <Link
-              href={contactLink.href}
-              onClick={() => setIsOpen(false)}
-              className="group flex items-center justify-center gap-3 px-3 py-3 text-base font-medium text-charcoal dark:text-offwhite transition-colors hover:bg-warm-200 dark:hover:bg-charcoal-700 font-sans text-center"
-            >
-              <ContactIcon size={18} className="transition-colors group-hover:text-accent-600" /> {contactLink.label}
-            </Link>
           </nav>
           <div className="px-6 py-3 pb-8">
             <p className="text-xs text-charcoal-600 dark:text-offwhite/80 flex items-center justify-center gap-1 font-sans font-medium text-center">
@@ -147,21 +138,13 @@ export default function Sidebar() {
             <Link
               key={href}
               href={href}
-              className="group flex items-center gap-2 px-4 py-1 rounded-lg transition-all duration-200 hover:bg-warm-200 dark:hover:bg-charcoal-700 hover:scale-105 font-sans text-lg font-medium text-black dark:text-offwhite"
+              className="group flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-warm-200 dark:hover:bg-charcoal-700 hover:scale-105 font-sans text-lg font-medium text-black dark:text-offwhite"
             >
               <Icon className="transition-colors group-hover:text-accent-600" /> {label}
             </Link>
           ))}
         </nav>
-        <div className="flex flex-col justify-end h-screen w-full">
-          <Link
-            href={contactLink.href}
-            className="group flex items-center gap-2 px-4 py-1 rounded-lg transition-all duration-200 hover:bg-warm-200 dark:hover:bg-charcoal-700 hover:scale-105 font-sans text-lg font-medium text-black dark:text-offwhite mb-6 w-10/12"
-          >
-            <ContactIcon className="transition-colors group-hover:text-accent-600" /> {contactLink.label}
-          </Link>
-        </div>
-        <div className="mt-auto pt-8 w-fit border-t border-charcoal-100 dark:border-charcoal-700">
+        <div className="mt-6 pt-6 w-fit border-t border-charcoal-100 dark:border-charcoal-700">
           <p className="text-xs text-charcoal-600 dark:text-offwhite/80 font-sans font-medium flex items-center gap-1 px-4">
             <Copyright size={10} /> 2026 with
             <Heart

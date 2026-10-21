@@ -32,10 +32,10 @@ type Experience = {
 const experiences: Experience[] = [
 	{
 		id: "exp-0",
-		role: "Incoming Software Engineer",
+		role: "Software Engineer",
 		company: "Bloomberg",
 		location: "New York City, NY",
-		timeframe: "Current",
+		timeframe: "Aug 26' - ",
 	},
 	{
 		id: "exp-1",
@@ -44,7 +44,8 @@ const experiences: Experience[] = [
 		location: "Pittsburgh, PA",
 		timeframe: "Aug - Dec '25",
 		description:
-			"440 is a really cool class that teaches a wide variety of topics in distributed systems, so I was excited to come back to the topics as a TA. I taught biweekly recitations for the different projects including a Go-style kvstore, a distributed bitcoin miner using customized a UDP/TCP protocol, the Raft consensus algorithm, and the actor model. I also held weekly office hours for written homework and projects.",
+		    // 
+			"This class teaches a wide breadth of distributed systems material that I found very useful in my career so far. I taught biweekly recitations for the different projects including a Go-style kvstore, a distributed bitcoin miner using customized a UDP/TCP protocol, the Raft consensus algorithm, and the actor model. I also held weekly office hours for written homework and projects.",
 		linkHref: "https://www.composablesystems.org/15-440/fa2025/syllabus/",
 		linkLabel: "F25 440 course site",
 	},
@@ -75,7 +76,7 @@ const experiences: Experience[] = [
 		location: "Pittsburgh, PA",
 		timeframe: "May - Aug '24",
 		description:
-			"Throughout this summer I helped define the Insider Incident Data Exchange Standard (IIDES) and built a Python library implementing it, straightforwardly named PyIIDES. Researchers could use the library to make connections between insider threat data and act accordingly.",
+			"Helped define the Insider Incident Data Exchange Standard (IIDES) and built a Python library implementing it, straightforwardly named PyIIDES. Researchers could use the library to make connections between insider threat data and act accordingly.",
 		linkHref: "https://github.com/cmu-sei/iides/blob/main/documentation/WhitePaper.md",
 		linkLabel: "IIDES white paper",
 	},
@@ -86,7 +87,7 @@ const experiences: Experience[] = [
 		location: "Pittsburgh, PA",
 		timeframe: "Jun - Aug '23",
 		description:
-			"I worked with a professor interested in utilizing AI to assist with his research. First, I developed a tool using OpenAI and Python to automate the process of transcription editing. This removed the need to go through thousands of lines of interviews to remove filler words, misspellings, etc. Next, I developed an AI chatroom for students to encourage open discussion and debate on charged topics in a safe space.",
+			"Built tools to help researchers transcribe long interview corpuses faster and help students talk about difficult topics.",
 	},
 ];
 
